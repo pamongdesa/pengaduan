@@ -23,6 +23,24 @@ export function updateProvinces() {
     }
 }
 
+// Mengambil data pelanggan dari backend (contoh menggunakan fetch)
+async function getCustomerInfo() {
+    try {
+        // Gantikan URL dengan endpoint API yang sesuai
+        const response = await fetch('https://api.example.com/customer-info');
+        const data = await response.json();
+
+        // Masukkan data ke dalam elemen HTML
+        document.getElementById("customer-name").innerText = data.name;
+        document.getElementById("customer-phone").innerText = data.phone;
+    } catch (error) {
+        console.error("Error fetching customer info:", error);
+    }
+}
+
+// Panggil fungsi untuk mengambil data pelanggan saat halaman dimuat
+getCustomerInfo();
+
 document.getElementById("complaintForm").addEventListener("submit", function(event) {
     event.preventDefault();
     const regional = document.getElementById("regional").value;
@@ -35,5 +53,5 @@ document.getElementById("complaintForm").addEventListener("submit", function(eve
     }
 
     alert("Komplain berhasil dikirim!");
-    // Perform your form submission logic here
+    // Lakukan logika pengiriman form di sini
 });

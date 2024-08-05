@@ -9,6 +9,10 @@
 <body>
     <div class="container">
         <h2>Form Komplain Pelanggan</h2>
+        <div id="customer-info">
+            <p><strong>Nama:</strong> <span id="customer-name"></span></p>
+            <p><strong>Nomor Telepon:</strong> <span id="customer-phone"></span></p>
+        </div>
         <form id="complaintForm">
             <div class="form-group">
                 <label for="regional">Regional:</label>
@@ -27,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="masalah">Masalah:</label>
-                <input type="text" id="masalah" name="masalah" placeholder="Deskripsi Masalah">
+                <textarea id="masalah" name="masalah" placeholder="Deskripsi Masalah" rows="4"></textarea>
             </div>
             <button type="submit">Submit</button>
         </form>
